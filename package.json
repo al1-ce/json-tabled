@@ -1,11 +1,12 @@
 {
   "name": "json-tabled",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Simple standalone table editor with export to JSON",
   "main": "src/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder --win -p always"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,8 @@
   },
   "homepage": "https://github.com/al1-ce/json-tabled#readme",
   "devDependencies": {
-    "electron": "^17.0.0"
+    "electron": "^17.0.0",
+    "electron-builder": "^22.14.13"
   },
   "dependencies": {
     "@electron/remote": "^2.0.4",
@@ -35,5 +37,18 @@
     "OriginalFilename": "JSONTabled",
     "ProductName": "JSON Tabled",
     "InternalName": "JSONTabled"
-  }
+  }, 
+  "build": {
+    "appId": "dev.al1-ce.json-tabled",
+    "linux": {
+        "target": [
+            "AppImage",
+            "deb"
+        ]
+    },
+    "win": {
+        "target": "portable",
+        "icon": "build/json-file.ico"
+    }
+ }
 }
