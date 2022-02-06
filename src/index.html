@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https:; manifest-src 'self'">
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+
+        <script src="js/index.js"></script>
+
+        <link rel="stylesheet" href="css/index.css"/>
+
+        <title>JSON Tabled</title>
+    </head>
+
+    <body>
+        <hr>
+        <div id="settings" class="section">
+            <div class="settings-section"  id="settings-json">
+                <div class="dropdown">
+                    <button class="dropbtn">Load JSON<i class="arrow-down"></i></button>
+                    <div class="dropdown-content">
+                        <button class="json-settings-button" id="button-load-json">Input Field</button>
+                        <button class="json-settings-button" id="button-load-json-clip">Clipboard</button>
+                        <button class="json-settings-button" id="button-load-json-file">Open File</button>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Save JSON<i class="arrow-down"></i></button>
+                    <div class="dropdown-content">
+                        <button class="json-settings-button" id="button-save-json">Input Field</button>
+                        <button class="json-settings-button" id="button-save-json-clip">Clipboard</button>
+                        <button class="json-settings-button" id="button-save-json-file">Save File</button>
+                    </div>
+                </div>
+            </div>
+            <div class="vbar"></div>
+            <div class="settings-section" id="settings-col">
+                <div class="settings-name">Col: </div>
+                <input class="table-size-input" id="num-col" type="number" min="1" step="1" value="3" required>
+                <button class="table-size-button button-add" id="add-col">
+                    <img class="button-icon" src="assets/icons/add.png">
+                </button> <!--x-->
+                <button class="table-size-button button-rem" id="rem-col">
+                    <img class="button-icon" src="assets/icons/remove.png">
+                </button> <!--x-->
+            </div>
+            <div class="vbar"></div>
+            <div class="settings-section"  id="settings-row">
+                <div class="settings-name">Row: </div>
+                <input class="table-size-input" id="num-row" type="number" min="1" step="1" value="1" required/>
+                <button class="table-size-button button-add" id="add-row">
+                    <img class="button-icon" src="assets/icons/add.png">
+                </button> <!--y-->
+                <button class="table-size-button button-rem" id="rem-row">
+                    <img class="button-icon" src="assets/icons/remove.png">
+                </button> <!--y-->
+            </div>
+            <div class="vbar"></div>
+            <div class="settings-section"  id="settings-table">
+                <div class="settings-name">Min col width: </div>
+                <input type="range" min="1" max="30" value="10" id="slider-col">
+            </div>
+        </div>
+
+        
+        <hr>
+        <div id="table" class="section">
+            <table>
+                <thead id="table-head">
+                    <tr>
+                        <th id="table-sep"></th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <tr><td>1</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <div id="float-background"></div>
+
+        <div id="json-input-window" class="float-window">
+            <textarea id="json-input"></textarea>
+            <button id="json-input-cancel">Close</button>
+            <button id="json-input-load">Load</button>
+        </div>
+
+        <input id="json-file-input" type="file" accept=".json" />
+    </body>
+</html>
