@@ -18,7 +18,7 @@ const createWindow = () => {
     require("@electron/remote/main").enable(win.webContents);
     win.loadFile('src/index.html');
     // win.setMenuBarVisibility(false);
-    win.removeMenu(true); // removes entirely
+    // win.removeMenu(true); // removes entirely
     // ctrl + shift + i
   }
 

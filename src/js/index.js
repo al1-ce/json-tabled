@@ -3,10 +3,11 @@ const {clipboard} = require('electron');
 const {dialog} = require('@electron/remote');
 
 const fs = require('fs');
-
+const {app} = require('@electron/remote');
 
 
 $(function() {
+    // alert(app.getPath('userData'));
     updateTable();
 
     $('#add-col').on('click', function() {
